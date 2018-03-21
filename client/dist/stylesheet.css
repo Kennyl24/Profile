@@ -1,0 +1,159 @@
+.appbar {
+  position: absolute;
+}
+footer {
+  text-align: center;
+  font-size: 10px;
+}
+h2{
+  padding-top: 210px;
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 00px;
+  color: #dadade;
+  font: raleway; 
+}
+h3{
+  text-align: center;
+  font-size: 33px;
+  color: white;
+  font-style: oblique;
+}
+.description{
+  text-align: center;
+  font-size: 19px;
+  padding-top: 20px;
+  color:#6b6d70;
+  font-family: 'Raleway';
+}
+.description2{
+  text-align: center;
+  flex: 1;
+  font-size: 19px;
+  padding-top: 20px;
+  color:#6b6d70;
+  font-family: 'Raleway';
+}
+.describe{
+  text-align: center;
+  font-size: 33px;
+  color: #4a4b4c;
+  font-style: oblique;
+}
+.box{
+  height: 60%;
+  width: 30%;
+  border: red;
+}
+p1{
+  padding-left: 0%;
+  font-size: 33px;
+  color: rgb(12, 3, 3);
+  font-style: oblique;
+}
+.header {
+  padding-left: 50%;
+  text-decoration: underline;
+  font-size: 33px;
+  color: rgb(12, 3, 3);
+  font-style: oblique;
+  padding-bottom: 50px;
+}
+.test {
+  background-color: rgb(249, 248, 238);
+}
+.heading {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 33px;
+  text-decoration: underline;
+  color: rgb(9, 0, 0);
+}
+.projects {
+  padding-bottom: 30px;
+  padding-top: 70px;
+  text-align: center;
+  font-size: 33px;
+  text-decoration: underline;
+  color: rgb(9, 0, 0);
+}
+p {
+  padding-top: 100px;
+  padding-left: 350px;
+  text-align: center; 
+  font-size: 24px;
+  color: rgb(187, 22, 22);
+}
+.aboutMe {
+  padding-top: 100px;
+  padding-left: 350px;
+  text-align: center; 
+  font-size: 24px;
+  color: rgb(187, 22, 22);
+}
+#navbuttons {
+  font-size: 1.3rem;
+  padding-left: 20px;
+  color: white;
+}
+#appbar {
+  height:60px;
+  color: black;
+
+}
+.chipper {
+  padding-left: 80%
+  
+}
+.flexer {
+  display: flex; 
+  padding-left: 11.5%;
+  padding-right: 10%;
+  padding-top: 25px;
+}
+.flexer2 {
+  display: flex; 
+  padding-left: 11.5%;
+  padding-right: 10%;
+  padding-top: 15px;
+}
+.colorfulText {
+  color: blue;
+  text-decoration: underline;
+}
+.nav{
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+}
+.col {
+  flex: 1; /* additionally, equal width */
+  padding: 1em;
+  /* border: solid; */
+}
+.col2 {
+  flex: 1; /* additionally, equal width */
+  padding: 1em;
+}
+.col3 {
+  flex: 1; /* additionally, equal width */
+  padding: 1em;
+}
+.contact {
+  background-color: rgb(19, 19, 19);
+  text-align: center;
+}
+h10 {
+  color: white;
+  text-decoration: underline;
+  font-size: 44px;
+}
+p3 {
+  color: rgb(9, 180, 248);
+  text-align: center;
+}
+/* img {
+  height: 50px;
+} */
