@@ -13,11 +13,11 @@ class Contact extends React.Component {
         <h10 className="contactHeader">CONTACT</h10>
         <br/>
         <br/>
+        {/* <br/>
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
+        <br/> */}
         <p3>Have a question or want to work together?</p3>
     </div>
     );

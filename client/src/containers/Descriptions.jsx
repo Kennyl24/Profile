@@ -22,7 +22,6 @@ const iconStyles = {
 };
 const Description = () => (
   <div>
-  <div className="heading">ABOUT</div>
     <div className="flexer">
     <div className="col">
     <ActionHourglassEmpty style={iconStyles} color={red500} />
