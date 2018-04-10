@@ -1,7 +1,6 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import Backend from './Backend.jsx';
 import Chip from 'material-ui/Chip';
 import NavigationArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
 import NavigationArrowDownward from 'material-ui/svg-icons/navigation/arrow-downward';

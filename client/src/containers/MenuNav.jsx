@@ -4,31 +4,35 @@ import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import NavigationMoreHoriz from 'material-ui/svg-icons/navigation/more-horiz';
 import ContentFilter from 'material-ui/svg-icons/content/filter-list';
 import FileFileDownload from 'material-ui/svg-icons/file/file-download';
-
-/**
- * Three controlled examples, the first allowing a single selection, the second multiple selections,
- * the third using internal state.
- */
 const styles = {
   largeIcon: {
     width: 60,
     height: 60,
   },
   large: {
-    width: 80,
-    height: 80,
+    width: 60,
+    height: 60,
     padding: 0,
+    position: 'fixed',
+    top: '10',
+    right: '0',
   },
   menu: {
-    backgroundColor: '#e2d7c8'
+    backgroundColor: '#e2d7c8',
+    height: '200px',
+    top: 10,
+    right: 120,
+    position: '',
   }
 };
 class MenuNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isHovered: false,
       valueSingle: null,
       valueMultiple: null,
       openMenu: false,
@@ -36,7 +40,8 @@ class MenuNav extends React.Component {
     this.handleChangeSingle = this.handleChangeSingle.bind(this)
     this.handleChangeMultiple = this.handleChangeMultiple.bind(this)
     this.handleOpenMenu = this.handleOpenMenu.bind(this)
-    this.test = this.test.bind(this)
+    this.mouseEnter = this.mouseEnter.bind(this)
+    this.mouseLeave = this.mouseLeave.bind(this)
     this.handleOnRequestChange = this.handleOnRequestChange.bind(this)
 };
 
@@ -63,17 +68,24 @@ class MenuNav extends React.Component {
       openMenu: value,
     });
   }
-  test () {
-    console.log('hello')
+  mouseEnter () {
+    console.log('hello');
+    this.setState({
+      isHovered: true,
+    });
+  }
+  mouseLeave () {
+    console.log('goodbye');
+    this.setState({
+      isHovered: false,
+    });
   }
   render() {
     return (
-      <div className="col">
-        <IconMenu
+       <IconMenu onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}
           menuStyle={styles.menu}
           iconButtonElement={<IconButton iconStyle={styles.largeIcon}
-          onKeyBoardFocus={this.handleOpenMenu}
-          style={styles.large}><MoreVertIcon /></IconButton>}
+    style={styles.large}> {this.state.isHovered ? <NavigationMoreHoriz/> : <MoreVertIcon/> } </IconButton>}
           onChange={this.handleChangeSingle}
           value={this.state.valueSingle}
         >
@@ -82,7 +94,6 @@ class MenuNav extends React.Component {
           <MenuItem value="3" primaryText="Projects" />
           <MenuItem value="4" primaryText="Contact" />
         </IconMenu>
-      </div>
     );
   }
 }

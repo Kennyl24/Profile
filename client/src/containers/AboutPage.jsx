@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-// main app
-import LeadBar from './LeadBar.jsx';
-import Backend from './Backend.jsx';
 import MenuNav from './MenuNav.jsx';
 import Skills from './Skills.jsx';
 import Portfolio from './Portfolio.jsx';
@@ -22,11 +19,8 @@ import NavigationArrowForward from 'material-ui/svg-icons/navigation/arrow-forwa
 import NavigationArrowDownward from 'material-ui/svg-icons/navigation/arrow-downward';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
-const iconStyles = {
-  paddingTop: '20px',
-  transform: 'scale(2.5)',
-  marginRight: 250,
-};
+import NavMenu from './NavMenu.jsx';
+import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 const styles = {
   largeIcon: {
     width: 60,
@@ -35,7 +29,7 @@ const styles = {
   tooltip: {
     width: 120,
     fontSize: '22px',
-    backgroundColor: 'none',
+    backgroundColor: 'white',
     fontColor: 'black',
     color: 'black',
     rippleBackgroundColor: 'blue'
@@ -46,7 +40,6 @@ const styles = {
     padding: 30,
   },
 };
-const viewBoxy = '0 0 24 24';
 class AboutPage extends React.Component {
   constructor(props) {
     super(props);
@@ -56,21 +49,26 @@ class AboutPage extends React.Component {
   render () {
     return (
   <MuiThemeProvider>
-      <div className="test">
-      {/* <div className="flexer5">
-      <div className="tester">
-        <h1 className="col">Technical Skills</h1>
-        </div>
-  <MenuNav/>
-  <div style={{paddingLeft: '89%', paddingTop:'1px'}}><IconButton 
+    <NavMenu/>
+  <div className="skillspage">
+    <h1>Technical Skills</h1>
+  <div>
+  <div className="arrowright"><IconButton 
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large}href="/Projects" tooltip="About Me">
+   style={styles.large}href="/Projects" tooltip="Projects" >
       <NavigationArrowForward />
     </IconButton></div>
-     </div> */}
-  <div>
+    <div className="arrowleft">
+    <IconButton 
+  tooltipStyles={styles.tooltip}
+   iconStyle={styles.largeIcon}
+   tooltipPosition="top-right"
+   style={styles.large3}href="/" tooltip="Home">
+      <NavigationArrowBack />
+    </IconButton>
+  </div>
   <div>
   <p>
     I specialize in front end development and design, with knowledge in system administration and back end development.

@@ -6,24 +6,47 @@ import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import MenuNav from './MenuNav.jsx';
 import Description from './Descriptions.jsx';
+import NavMenu from './NavMenu.jsx';
+import NavigationArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
+import NavigationArrowDownward from 'material-ui/svg-icons/navigation/arrow-downward';
+import FontIcon from 'material-ui/FontIcon';
+import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 const styles = {
   root: {
     display: 'flex',
-    flexWrap: 'nowrap',
+    flexWrap: 'wrap',
     justifyContent: 'space-around',
   },
   gridList: {
     display: 'flex',
     flexWrap: 'wrap',
     overflowX: 'auto',
-    width: '100%',
+    width: '74%',
     height: 550,
     overflowY: 'auto',
   },
   titleStyle: {
     color: 'rgb(0, 188, 212)',
   },
+  largeIcon: {
+    width: 60,
+    height: 60,
+  },
+  tooltip: {
+    width: 120,
+    fontSize: '22px',
+    backgroundColor: 'white',
+    fontColor: 'black',
+    color: 'black',
+    rippleBackgroundColor: 'blue'
+  },
+  large: {
+    width: 120,
+    height: 120,
+    padding: 30,
+  },
 };
+
 const tilesData = [
   {
     img: '',
@@ -40,18 +63,39 @@ const tilesData = [
     title: 'Camera',
     author: 'Danson67',
   },
+  {
+    img: 'http://i63.tinypic.com/2usx0kl.png',
+    title: 'Camera',
+    author: 'Danson67',
+  },
 ];
 
-/**
- * This example demonstrates the horizontal scrollable single-line grid list of images.
- */
 const Projects = () => (
   <MuiThemeProvider>
   <div>
-  <MenuNav/>  
+  <div className="heading">
+  Projects
+  </div>
+  <NavMenu/>
+  <div className="arrowright"><IconButton 
+  tooltipStyles={styles.tooltip}
+   iconStyle={styles.largeIcon}
+   tooltipPosition="top-right"
+   style={styles.large}href="/Contact" tooltip="Contact" >
+      <NavigationArrowForward />
+    </IconButton></div>
+    <div className="arrowleft">
+    <IconButton 
+  tooltipStyles={styles.tooltip}
+   iconStyle={styles.largeIcon}
+   tooltipPosition="top-right"
+   style={styles.large3}href="/About" tooltip="About Me">
+      <NavigationArrowBack />
+    </IconButton>
+  </div>
       <Description/>
   <div style={styles.root}>
-    <GridList style={styles.gridList} cols={1}>
+    <GridList style={styles.gridList} cols={2}>
       {tilesData.map((tile) => (
         <GridTile
           key={tile.img}
@@ -65,14 +109,6 @@ const Projects = () => (
       ))}
     </GridList>
   </div>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-
   </div>
   </MuiThemeProvider>
 );
