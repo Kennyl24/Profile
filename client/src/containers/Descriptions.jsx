@@ -11,9 +11,6 @@ import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 import ActionHourglassEmpty from 'material-ui/svg-icons/action/hourglass-empty';
 import HardwareDeviceHub from 'material-ui/svg-icons/hardware/device-hub';
 import HardwareDevicesOther from 'material-ui/svg-icons/hardware/devices-other';
-        // key={data.key}
-        // onRequestDelete={() => this.handleRequestDelete(data.key)}
-        // style={this.styles.chip}
 const iconStyles = {
           transform: 'scale(2.5)',
           marginLeft: '48%',

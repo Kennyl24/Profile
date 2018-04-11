@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AboutPage from './containers/AboutPage.jsx';
 import LandingPage from './containers/LandingPage.jsx';
-import Portfolio from './containers/Portfolio.jsx';
 import Projects from './containers/Projects.jsx';
 import Contact from './containers/Contact.jsx';
+
 ReactDOM.render(
   <Router>
     <Switch>

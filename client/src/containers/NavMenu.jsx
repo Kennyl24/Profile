@@ -35,7 +35,7 @@ class NavMenu extends React.Component {
       <div className="nav">
         <RaisedButton
           backgroundColor="#505050"
-          icon={<NavigationMoreHoriz color={fullWhite} />}
+          icon={<NavigationMoreHoriz color={'white'} />}
           onClick={this.handleToggle}
         />
         <div className="drawer">

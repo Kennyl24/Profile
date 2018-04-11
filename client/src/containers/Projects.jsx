@@ -4,7 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import MenuNav from './MenuNav.jsx';
 import Description from './Descriptions.jsx';
 import NavMenu from './NavMenu.jsx';
 import NavigationArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
@@ -50,22 +49,22 @@ const styles = {
 const tilesData = [
   {
     img: '',
-    title: 'Breakfast',
+    title: 'DJ COLIMA',
     author: 'jill111',
   },
   {
     img: 'http://i64.tinypic.com/dzths3.png',
-    title: 'Tasty burger',
+    title: 'Meet.ly',
     author: 'pashminu',
   },
   {
     img: 'http://i63.tinypic.com/2usx0kl.png',
-    title: 'Camera',
+    title: 'Evently',
     author: 'Danson67',
   },
   {
     img: 'http://i63.tinypic.com/2usx0kl.png',
-    title: 'Camera',
+    title: 'Napa Valley Transmissions',
     author: 'Danson67',
   },
 ];

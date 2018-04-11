@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import MenuNav from './MenuNav.jsx';
 import Skills from './Skills.jsx';
-import Portfolio from './Portfolio.jsx';
 import Description from './Descriptions.jsx';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import FileFileDownload from 'material-ui/svg-icons/file/file-download';
@@ -21,6 +19,7 @@ import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import NavMenu from './NavMenu.jsx';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
+
 const styles = {
   largeIcon: {
     width: 60,
@@ -31,7 +30,7 @@ const styles = {
     fontSize: '22px',
     backgroundColor: 'white',
     fontColor: 'black',
-    color: 'black',
+    color: '#e74a64',
     rippleBackgroundColor: 'blue'
   },
   large: {
@@ -65,7 +64,7 @@ class AboutPage extends React.Component {
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large3}href="/" tooltip="Home">
+   style={styles.large}href="/" tooltip="Home">
       <NavigationArrowBack />
     </IconButton>
   </div>
@@ -73,7 +72,9 @@ class AboutPage extends React.Component {
   <p>
     I specialize in front end development and design, with knowledge in system administration and back end development.
   </p>
+  <div className="skills">
   <Skills/> 
+  </div>
     </div>
       </div>
     </div>

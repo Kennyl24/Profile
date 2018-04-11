@@ -9,7 +9,7 @@ import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import NavMenu from './NavMenu.jsx';
-import Portfolio from './Portfolio.jsx';
+
 const styles = {
   largeIcon: {
     width: 60,
@@ -29,7 +29,7 @@ const styles = {
     padding: 30,
   },
 };
-import MenuNav from './MenuNav.jsx';
+
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
@@ -43,20 +43,17 @@ class LandingPage extends React.Component {
   render () {
     return (
       <MuiThemeProvider>
-    <div style={{
-    backgroundImage: 'url(http://i68.tinypic.com/2nqy8mh.jpg)',
-    width: '100%',
-    opacity: '0.80',
-    height: '780px'}}>
+    <div className="landingpage">
     <NavMenu/>
-    <div className="arrowright"><IconButton 
+    <div className="arrowright bounce"><IconButton 
     onMouseOver={this.buttonClicked}
-  tooltipStyles={styles.tooltip}
-   iconStyle={styles.largeIcon}
-   tooltipPosition="top-right"
-   style={styles.large}href="/About" tooltip="About Me" onClick={this.buttonClicked}>
+    tooltipStyles={styles.tooltip}
+    iconStyle={styles.largeIcon}
+    tooltipPosition="top-right"
+    style={styles.large}href="/About" tooltip="About Me" onClick={this.buttonClicked}>
       <NavigationArrowForward />
-    </IconButton></div>
+    </IconButton>
+    </div>
     <div className="introduction">
        <h2>Hi, my name is <h12>&nbsp;Kenneth LaPrelle</h12>.
        </h2>
