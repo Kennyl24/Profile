@@ -14,6 +14,7 @@ const styles = {
   largeIcon: {
     width: 60,
     height: 60,
+    color: 'white'
   },
   tooltip: {
     width: 120,
@@ -45,12 +46,10 @@ class LandingPage extends React.Component {
       <MuiThemeProvider>
     <div className="landingpage">
     <NavMenu/>
-    <div className="arrowright bounce"><IconButton 
+    <div className="arrowright bounce">LEARN MORE<IconButton 
     onMouseOver={this.buttonClicked}
-    tooltipStyles={styles.tooltip}
     iconStyle={styles.largeIcon}
-    tooltipPosition="top-right"
-    style={styles.large}href="/About" tooltip="About Me" onClick={this.buttonClicked}>
+    style={styles.large}href="/About" onClick={this.buttonClicked}>
       <NavigationArrowForward />
     </IconButton>
     </div>
@@ -58,7 +57,7 @@ class LandingPage extends React.Component {
        <h2>Hi, my name is <h12>&nbsp;Kenneth LaPrelle</h12>.
        </h2>
        <h3>
-      As a full stack software engineer, I am someone who has the passion for creatings extraordinary user experiences, while touching across the full stack of the application.
+        Let's build something <span className="lakers">spectacular.</span>
        </h3>
        </div>
     </div>
