@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import {fullWhite} from 'material-ui/styles/colors';
 import ActionAndroid from 'material-ui/svg-icons/action/android';
 import NavigationMoreHoriz from 'material-ui/svg-icons/navigation/more-horiz';
-
+import { Link } from 'react-router-dom'
 const styles = {
   large: {
     height: 48,
@@ -53,10 +53,10 @@ class NavMenu extends React.Component {
         >
         <div style={{backgroundColor:'black', height:'100%', zIndex:'9999999'}}>
         <span>KENNETH'S Portfolio</span>
-          <MenuItem style={{fontSize:'50px', color:'white', paddingBottom:'50px', backgroundColor:'black'}}onClick={this.handleClose}>Home</MenuItem>
-          <MenuItem style={{fontSize:'50px', color:'white', paddingBottom:'50px', backgroundColor:'black'}}onClick={this.handleClose}>Skills</MenuItem>
-          <MenuItem style={{fontSize:'50px', color:'white', paddingBottom:'50px', backgroundColor:'black'}}onClick={this.handleClose}>Projects</MenuItem>
-          <MenuItem style={{fontSize:'50px', color:'white', paddingBottom:'50px', backgroundColor:'black'}} onClick={this.handleClose}>Contact</MenuItem>
+          <MenuItem style={{fontSize:'40px', color:'white', paddingBottom:'50px', backgroundColor:'black'}}onClick={this.handleClose}><Link to="/" style={{color:'white', textDecoration:'none'}}>Home</Link></MenuItem>
+          <MenuItem style={{fontSize:'40px', color:'white', paddingBottom:'50px', backgroundColor:'black'}}onClick={this.handleClose}><Link to="/About"style={{color:'white', textDecoration:'none'}}>Skills</Link></MenuItem>
+          <MenuItem style={{fontSize:'40px', color:'white', paddingBottom:'50px', backgroundColor:'black'}}onClick={this.handleClose}><Link to="/Projects"style={{color:'white', textDecoration:'none'}}>Projects</Link></MenuItem>
+          <MenuItem style={{fontSize:'40px', color:'white', paddingBottom:'50px', backgroundColor:'black'}} onClick={this.handleClose}><Link to="/Contact"style={{color:'white', textDecoration:'none'}}>Contact</Link></MenuItem>
           </div>
         </Drawer>
       </div>

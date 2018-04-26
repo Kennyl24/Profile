@@ -16,6 +16,7 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import CommunicationContactMail from 'material-ui/svg-icons/communication/contact-mail';
 import CommunicationContactPhone from 'material-ui/svg-icons/communication/contact-phone';
+
 const style = {
   height: 500,
   width: 500,
@@ -78,15 +79,26 @@ class Contact extends React.Component {
     <span className="titles">Connect with me</span>
     </div>
     <FlatButton
+      href="https://www.linkedin.com/in/kenneth-laprelle/"
+      target="_blank"
+      secondary={true}
+      backgroundColor="white"
+      icon={<img style={{height: '30px', width: '30px'}}src="http://sguru.org/wp-content/uploads/2018/02/linkedin-logo.png"></img>}
+    />
+    <FlatButton
       href="https://github.com/kennyl24"
       target="_blank"
       secondary={true}
-      backgroundColor="#a4c639"
-      icon={<FontIcon className="muidocs-icon-custom-github"GIT />}
+      backgroundColor="white"
+      icon={<img style={{height: '30px', width: '30px'}}src="https://image.flaticon.com/icons/svg/25/25231.svg"></img>}
     />
-    {/* <img style={{height: '100px', width: '100px'}}src="https://image.flaticon.com/icons/svg/25/25231.svg"></img>
-    <img style={{height: '100px', width: '100px'}}src="http://sguru.org/wp-content/uploads/2018/02/linkedin-logo.png"></img>
-    <img style={{height: '100px', width: '100px'}}src="http://www.stickpng.com/assets/images/584856b4e0bb315b0f7675ac.png"></img> */}
+    <FlatButton
+      href="mailto:kenny.laprelle@gmail.com"
+      target="_blank"
+      secondary={true}
+      backgroundColor="white"
+      icon={<img style={{height: '45px', width: '45px'}}src="http://www.stickpng.com/assets/images/584856b4e0bb315b0f7675ac.png"></img>}
+    />
     <div className="heading">
     <span className="titles">Reach out Directly</span>
     </div>
