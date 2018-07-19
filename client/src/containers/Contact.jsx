@@ -67,7 +67,38 @@ const styles = {
 class Contact extends React.Component {
     constructor(props) {
       super(props);
+      this.state = {
+        name: '', 
+        email: '', 
+        phoneNumber: '', 
+        message: '', 
+      }
+      this.nameChange = this.nameChange.bind(this);
+      this.emailChange = this.emailChange.bind(this);
+      this.phoneChange = this.phoneChange.bind(this);
+      this.messageChange = this.messageChange.bind(this);
   };
+  emailChange(e){
+    this.setState({
+      email: e.target.value,
+    });
+  }
+  nameChange(e){
+    this.setState({
+      name: e.target.value,
+    });
+  }
+  phoneChange(e){
+    this.setState({
+      phoneNumber: e.target.value,
+    });
+  }
+  messageChange(e){
+    this.setState({
+      messageChange: e.target.value,
+    });
+    console.log('message', e.target.value)
+  }
   render(){
     return (
       <MuiThemeProvider>
@@ -103,18 +134,22 @@ class Contact extends React.Component {
     <span className="titles">Reach out Directly</span>
     </div>
     <TextField
+      onChange={this.nameChange}
       hintText="Name"
       underlineFocusStyle={styles.underlineStyle}
     /><br />
      <TextField
+      onChange={this.emailChange}
       hintText="Email"
       underlineFocusStyle={styles.underlineStyle}
     /><br />
      <TextField
+      onChange={this.phoneChange}
       hintText="Phone (optional)"
       underlineFocusStyle={styles.underlineStyle}
     /><br />
      <TextField
+     onChange={this.messageChange}
       hintText="Message"
       multiLine={true}
       rows={2}
