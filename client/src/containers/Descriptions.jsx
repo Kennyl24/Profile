@@ -22,18 +22,18 @@ const Description = () => (
     <div className="col">
     <ActionHourglassEmpty style={iconStyles} color={'white'} />
     <div className="describe">Efficient</div>
-    <div className="description">Fast load times and lag free interaction, my highest priority.</div>
+    {/* <div className="description">Fast load times and lag free interaction, my highest priority.</div> */}
     </div>
     <div className="col">
     <HardwareDevicesOther style={iconStyles} color={'white'}  />
     <div className="describe">Responsive</div>
-    <div className="description">My layouts will work on any device, big or small.</div>
+    {/* <div className="description">My layouts will work on any device, big or small.</div> */}
     
     </div>
     <div className="col">
     <HardwareDeviceHub  style={iconStyles} color={'white'} />
     <div className="describe">Dynamic</div>
-    <div className="description">Websites don't have to be static, I love making pages come to life.</div>
+    {/* <div className="description">Websites don't have to be static, I love making pages come to life.</div> */}
     </div>
     </div>
     </div>

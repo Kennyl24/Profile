@@ -49,7 +49,7 @@ class LandingPage extends React.Component {
     <div className="arrowright bounce">LEARN MORE<IconButton 
     onMouseOver={this.buttonClicked}
     iconStyle={styles.largeIcon}
-    style={styles.large}href="/About" onClick={this.buttonClicked}>
+    style={styles.large}href="/Projects" onClick={this.buttonClicked}>
       <NavigationArrowForward />
     </IconButton>
     </div>

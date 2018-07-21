@@ -40,7 +40,7 @@ const styles = {
     fontSize: '22px',
     backgroundColor: 'white',
     fontColor: 'black',
-    color: 'black',
+    color: 'rgb(244, 67, 54)',
     rippleBackgroundColor: 'blue'
   },
   large: {
@@ -52,8 +52,8 @@ const styles = {
 
 const tilesData = [
   {
-    img: 'http://i63.tinypic.com/2usx0kl.png',
-    title: 'DJ COLIMA',
+    img: 'http://i67.tinypic.com/1zfkmbl.jpg',
+    title: 'DJ KOLIMA',
   },
   {
     img: 'http://i64.tinypic.com/dzths3.png',
@@ -69,7 +69,24 @@ const tilesData = [
   },
 ];
 
-const Projects = () => (
+class Projects extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        modalOpen: false,
+      }
+      this.openModal = this.openModal.bind(this);
+  }
+
+  openModal(e){
+    e.preventDefault();
+    console.log('clicking cuh', e.target.key)
+    this.setState({
+      modalOpen: true,
+    })
+  }
+  render () {
+    return (
   <MuiThemeProvider>
   <div className="projects_page">
   <div className="heading">
@@ -82,7 +99,7 @@ const Projects = () => (
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large}href="/Contact" tooltip="Contact" >
+   style={styles.large}href="/About" tooltip="About" >
       <NavigationArrowForward />
     </IconButton></div>
     <div className="arrowleft">
@@ -90,7 +107,7 @@ const Projects = () => (
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large3}href="/About" tooltip="About Me">
+   style={styles.large}href="/" tooltip="Home">
       <NavigationArrowBack />
     </IconButton>
   </div>
@@ -101,7 +118,7 @@ const Projects = () => (
         <GridTile
           key={tile.img}
           title={tile.title}
-          actionIcon={<IconButton><ActionInfo/></IconButton>}
+          actionIcon={<div onClick={this.openModal}><IconButton ><ActionInfo/></IconButton></div>}
           titleStyle={styles.titleStyle}
           titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
@@ -112,6 +129,7 @@ const Projects = () => (
   </div>
   </div>
   </MuiThemeProvider>
-);
+)}
+};
 
 export default Projects;

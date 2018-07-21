@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import NavMenu from './NavMenu.jsx';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
@@ -46,18 +48,19 @@ const styles = {
   largeIcon: {
     width: 60,
     height: 60,
+    color: 'white'
   },
     underlineStyle: {
       borderColor: 'black',
     },
   tooltip: {
-    width: 120,
-    fontSize: '22px',
-    backgroundColor: 'white',
-    fontColor: 'black',
-    color: 'black',
-    rippleBackgroundColor: 'blue'
-  },
+      width: 120,
+      fontSize: '22px',
+      backgroundColor: 'white',
+      fontColor: 'black',
+      color: 'rgb(244, 67, 54)',
+      rippleBackgroundColor: 'blue'
+    },
   large: {
     width: 120,
     height: 120,
@@ -77,6 +80,7 @@ class Contact extends React.Component {
       this.emailChange = this.emailChange.bind(this);
       this.phoneChange = this.phoneChange.bind(this);
       this.messageChange = this.messageChange.bind(this);
+      this.submitData = this.submitData.bind(this);
   };
   emailChange(e){
     this.setState({
@@ -95,9 +99,24 @@ class Contact extends React.Component {
   }
   messageChange(e){
     this.setState({
-      messageChange: e.target.value,
+      message: e.target.value,
     });
     console.log('message', e.target.value)
+  }
+  submitData(){
+    console.log('submitting');
+    axios.post('/Contact', {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phoneNumber,
+      message: this.state.message,
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   render(){
     return (
@@ -131,14 +150,16 @@ class Contact extends React.Component {
       icon={<img style={{height: '45px', width: '45px'}}src="http://www.stickpng.com/assets/images/584856b4e0bb315b0f7675ac.png"></img>}
     />
     <div className="heading">
-    <span className="titles">Reach out Directly</span>
+    <span className="titles">Want to work together?</span>
     </div>
     <TextField
+      required = {true}
       onChange={this.nameChange}
       hintText="Name"
       underlineFocusStyle={styles.underlineStyle}
     /><br />
      <TextField
+      required = {true}
       onChange={this.emailChange}
       hintText="Email"
       underlineFocusStyle={styles.underlineStyle}
@@ -149,11 +170,16 @@ class Contact extends React.Component {
       underlineFocusStyle={styles.underlineStyle}
     /><br />
      <TextField
-     onChange={this.messageChange}
+      required = {true}
+      onChange={this.messageChange}
+      underlineFocusStyle={styles.underlineStyle}
       hintText="Message"
       multiLine={true}
       rows={2}
-    /><br />
+    /><br /> <br />
+    <span>
+    <RaisedButton style={{backgroundColor:'blue'}} onClick={this.submitData}>SUBMIT</RaisedButton>
+    </span>
     </Paper>
     </span>
     </div>
@@ -162,10 +188,11 @@ class Contact extends React.Component {
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large3}href="/Projects" tooltip="About Me">
+   style={styles.large}href="/About" tooltip="About Me">
       <NavigationArrowBack />
     </IconButton>
     </div>
+    
     </MuiThemeProvider>
     );
   }

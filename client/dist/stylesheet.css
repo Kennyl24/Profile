@@ -116,7 +116,7 @@ p1{
 .contact_page {
   background-image: url(https://images.template.net/wp-content/uploads/2016/01/27130044/Black-and-White-Wallpaper-Designs-Background-Download.jpg);
   background-size: cover; 
-  height: 780px;
+  height: 810px;
   width: 100%;
 }
 .skills {
@@ -145,7 +145,7 @@ p1{
     background-image: url(http://i65.tinypic.com/1zqztvk.jpg);
     background-size: cover; 
     width: 100%;
-    height: 780px;
+    height: 810px;
 }
 .contact_form {
   top: 160px;
@@ -214,8 +214,11 @@ p {
   font-size: 18px;
   opacity: 0.80;
 }
-.col1 {
+.col {
   flex: 1;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .col2 {
   padding-left: 20%;
@@ -243,7 +246,7 @@ p {
 .nav {
   right: 80px; 
   top: 35px;
-  position: fixed;
+  position: absolute;
 }
 h1 {
   left: 43%;
@@ -276,7 +279,7 @@ h1 {
   animation: none;
 }
 .arrowleft{
-  position: fixed;
+  position: absolute;
   top: 40%;
   left: 28px;
   z-index: 99;

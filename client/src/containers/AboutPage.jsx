@@ -59,7 +59,7 @@ class AboutPage extends React.Component {
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large}href="/Projects" tooltip="Projects" >
+   style={styles.large}href="/Contact" tooltip="Contact" >
       <NavigationArrowForward />
     </IconButton></div>
     <div className="arrowleft">
@@ -67,7 +67,7 @@ class AboutPage extends React.Component {
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large}href="/" tooltip="Home">
+   style={styles.large}href="/Projects" tooltip="Projects">
       <NavigationArrowBack />
     </IconButton>
   </div>
