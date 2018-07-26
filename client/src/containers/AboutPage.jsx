@@ -19,7 +19,7 @@ import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import NavMenu from './NavMenu.jsx';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
-
+import SkillsList from './SkillsList.jsx'
 const styles = {
   largeIcon: {
     width: 60,
@@ -76,8 +76,8 @@ class AboutPage extends React.Component {
   As a full stack software engineer, I am someone who has the passion for creatings extraordinary user experiences, while touching across the full stack of the application.
   Here are some of the technologies I have used in the past to complete this. 
   </p>
-  <div className="skills">
-  <Skills/> 
+  <div>
+  <SkillsList/> 
   </div>
     </div>
       </div>

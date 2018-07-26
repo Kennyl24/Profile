@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const database = require('../database');
 const db = require('../database/index.js');
 const mongoose = require('mongoose');
+const fs = require('fs');
 app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/../client/dist'));
@@ -25,6 +26,14 @@ app.post('/Contact', (req, res) => {
     if (err) {
       console.log('err on saving', err);
     } console.log(currentContact);
+  });
+});
+app.get('/Resume', (request, response) => {
+  let tempFile = './files/Resume.pdf';
+  fs.readFile(tempFile, function (err, data) {
+    console.log('sending');
+    response.contentType('application/pdf');
+    response.send(data);
   });
 });
 

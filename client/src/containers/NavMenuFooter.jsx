@@ -27,10 +27,8 @@ class NavMenuFooter extends React.Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-      <div style={{position:'absolute', bottom: '10px', fontSize:'14px', color:'white'}}>
-      <IconButton color="secondary" aria-label="previous song">
-        <Icon>skip_previous</Icon>
-      </IconButton>
+      <div style={{position:'absolute', textAlign:'center', bottom: '0px', left: '20%', fontSize:'14px', color:'white'}}>
+      kenny.laprelle@gmail.com <br/>  &copy; Kenneth Laprelle 
       </div>
       </MuiThemeProvider>
     );
