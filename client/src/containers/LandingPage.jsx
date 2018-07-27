@@ -44,7 +44,8 @@ class LandingPage extends React.Component {
   render () {
     return (
       <MuiThemeProvider>
-    <div className="landingpage">
+        <div style={{minHeight:'100%'}}>
+  <div className="landingpage">
     <NavMenu/>
     <div className="arrowright bounce">LEARN MORE<IconButton 
     onMouseOver={this.buttonClicked}
@@ -60,7 +61,8 @@ class LandingPage extends React.Component {
         Let's build something <span className="lakers">spectacular.</span>
        </h3>
        </div>
-    </div>
+       </div>
+       </div>
       </MuiThemeProvider>
     );
   };
