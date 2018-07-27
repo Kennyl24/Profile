@@ -21,8 +21,8 @@ import CommunicationContactPhone from 'material-ui/svg-icons/communication/conta
 
 const style = {
   height: 500,
-  width: 500,
-  margin: 20,
+  minWidth: 500,
+  // margin: 20,
   textAlign: 'center',
   display: 'inline-block',
 };
@@ -126,7 +126,7 @@ class Contact extends React.Component {
     <span className="contact_form">
     <Paper style={style} zDepth={4} rounded={true}>
     <div className="heading">
-    <span className="titles">Connect with me</span>
+    <span className="contact-header">Connect with me</span>
     </div>
     <FlatButton
       href="https://www.linkedin.com/in/kenneth-laprelle/"
@@ -150,7 +150,7 @@ class Contact extends React.Component {
       icon={<img style={{height: '45px', width: '45px'}}src="http://www.stickpng.com/assets/images/584856b4e0bb315b0f7675ac.png"></img>}
     />
     <div className="heading">
-    <span className="titles">Want to work together?</span>
+    <span className="contact-header">Want to work together?</span>
     </div>
     <TextField
       required = {true}
