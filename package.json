@@ -2,10 +2,10 @@
   "name": "profile",
   "version": "1.0.0",
   "description": "Kenneth's portfolio",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/index.js"
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
