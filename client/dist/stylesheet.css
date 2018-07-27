@@ -162,8 +162,8 @@ p2{
     height: 100vh;
 }
 .contact_form {
-  top: 160px;
-  right: 450px;
+  bottom: 15%;
+  left: 35%;
   position: fixed;
 }
 .projects {
@@ -287,21 +287,21 @@ h1 {
   position: fixed;
   top: 40%;
   transition: 1s;
-  right: 30px;
+  right: 2.5%;
   z-index: 99;
   animation: bounce 2s infinite ease-in-out;
 }
 .arrowright:hover{
   position: absolute;
   top: 40%;
-  right: 30px;
+  right: 2.5%;
   z-index: 99;
   animation: none;
 }
 .arrowleft{
   position: absolute;
   top: 40%;
-  left: 28px;
+  left: 2.5%;
   z-index: 99;
 }
 @keyframes bounce {

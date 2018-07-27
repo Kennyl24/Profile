@@ -9,7 +9,7 @@ import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import NavMenu from './NavMenu.jsx';
-
+import Arrows from './Arrows.jsx'
 const styles = {
   largeIcon: {
     width: 60,
@@ -47,13 +47,7 @@ class LandingPage extends React.Component {
         <div style={{minHeight:'100%'}}>
   <div className="landingpage">
     <NavMenu/>
-    <div className="arrowright bounce">LEARN MORE<IconButton 
-    onMouseOver={this.buttonClicked}
-    iconStyle={styles.largeIcon}
-    style={styles.large}href="/Projects" onClick={this.buttonClicked}>
-      <NavigationArrowForward />
-    </IconButton>
-    </div>
+      <Arrows/>
     <div className="introduction">
        <h2>Hi, my name is <h12>&nbsp;Kenneth LaPrelle</h12>.
        </h2>

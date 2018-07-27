@@ -20,26 +20,7 @@ import IconButton from 'material-ui/IconButton';
 import NavMenu from './NavMenu.jsx';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import SkillsList from './SkillsList.jsx'
-const styles = {
-  largeIcon: {
-    width: 60,
-    height: 60,
-    color: 'white'
-  },
-  tooltip: {
-    width: 120,
-    fontSize: '22px',
-    backgroundColor: 'white',
-    fontColor: 'black',
-    color: 'rgb(244, 67, 54)',
-    rippleBackgroundColor: 'blue'
-  },
-  large: {
-    width: 120,
-    height: 120,
-    padding: 30,
-  },
-};
+import Arrows from './Arrows.jsx'
 class AboutPage extends React.Component {
   constructor(props) {
     super(props);
@@ -54,23 +35,7 @@ class AboutPage extends React.Component {
   <div className="heading">
     <span className="titles">Technical Skills</span>
     </div>
-  <div>
-  <div className="arrowright"><IconButton 
-  tooltipStyles={styles.tooltip}
-   iconStyle={styles.largeIcon}
-   tooltipPosition="top-right"
-   style={styles.large}href="/Contact" tooltip="Contact" >
-      <NavigationArrowForward />
-    </IconButton></div>
-    <div className="arrowleft">
-    <IconButton 
-  tooltipStyles={styles.tooltip}
-   iconStyle={styles.largeIcon}
-   tooltipPosition="top-right"
-   style={styles.large}href="/Projects" tooltip="Projects">
-      <NavigationArrowBack />
-    </IconButton>
-  </div>
+      <Arrows/>
   <div>
   <p>
   As a full stack software engineer, I am someone who has the passion for creatings extraordinary user experiences, while touching across the full stack of the application.
@@ -81,7 +46,7 @@ class AboutPage extends React.Component {
   </div>
     </div>
       </div>
-    </div>
+  
     </MuiThemeProvider>
     );
   };
