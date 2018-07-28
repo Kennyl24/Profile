@@ -23,24 +23,24 @@ const styles = {
     padding: 30,
   },
 };
-const Arrows = () => (
+const Arrows = (props) => (
   <div>
-<div className="arrowright"><IconButton 
+  {props.next ? <div className="arrowright"><IconButton 
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large}href="/Contact" tooltip="Contact" >
+   style={styles.large}href={`/${props.next}`}tooltip={props.next} >
       <NavigationArrowForward />
-    </IconButton></div>
-    <div className="arrowleft">
+    </IconButton></div> : null}
+   {props.previous ?  <div className="arrowleft">
     <IconButton 
   tooltipStyles={styles.tooltip}
    iconStyle={styles.largeIcon}
    tooltipPosition="top-right"
-   style={styles.large}href="/Projects" tooltip="Projects">
+   style={styles.large} href={`/${props.previous}`} tooltip={props.previous}>
       <NavigationArrowBack />
     </IconButton>
-  </div>
+  </div> : null} 
   </div>
 );
 

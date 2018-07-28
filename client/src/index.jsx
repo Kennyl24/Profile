@@ -10,6 +10,7 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path="/" component={LandingPage} />
+      <Route exact path="/Home" component={LandingPage} />
       <Route path="/About" component={AboutPage} />
       <Route exact path="/Contact" component={Contact} />
       <Route exact path="/Projects" component={Projects} />

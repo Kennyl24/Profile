@@ -35,15 +35,13 @@ class AboutPage extends React.Component {
   <div className="heading">
     <span className="titles">Technical Skills</span>
     </div>
-      <Arrows/>
+  <Arrows next={'Contact'} previous={'Projects'}/>
   <div>
   <p>
   As a full stack software engineer, I am someone who has the passion for creatings extraordinary user experiences, while touching across the full stack of the application.
   Here are some of the technologies I have used in the past to complete this. 
   </p>
-  <div>
   <SkillsList/> 
-  </div>
     </div>
       </div>
   

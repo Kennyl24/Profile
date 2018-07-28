@@ -47,13 +47,7 @@ class LandingPage extends React.Component {
         <div style={{minHeight:'100%'}}>
   <div className="landingpage">
     <NavMenu/>
-    <div className="arrowright"><IconButton 
-  tooltipStyles={styles.tooltip}
-   iconStyle={styles.largeIcon}
-   tooltipPosition="top-right"
-   style={styles.large}href="/Projects" tooltip="Projects" >
-      <NavigationArrowForward />
-    </IconButton></div>
+    <Arrows next={'Projects'}/>
     <div className="introduction">
        <h2>Hi, my name is <h12>&nbsp;Kenneth LaPrelle</h12>
        </h2>

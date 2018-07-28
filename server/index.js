@@ -8,6 +8,7 @@ const fs = require('fs');
 app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/../client/dist'));
+app.use('/Home', express.static(__dirname + '/../client/dist'));
 app.use('/About', express.static(__dirname + '/../client/dist'));
 app.use('/Projects', express.static(__dirname + '/../client/dist'));
 app.use('/Contact', express.static(__dirname + '/../client/dist'));

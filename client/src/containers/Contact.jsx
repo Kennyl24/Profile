@@ -18,6 +18,7 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import CommunicationContactMail from 'material-ui/svg-icons/communication/contact-mail';
 import CommunicationContactPhone from 'material-ui/svg-icons/communication/contact-phone';
+import Arrows from './Arrows.jsx';
 
 const style = {
   height: 500,
@@ -183,15 +184,7 @@ class Contact extends React.Component {
     </Paper>
     </span>
     </div>
-    <div className="arrowleft">
-    <IconButton 
-  tooltipStyles={styles.tooltip}
-   iconStyle={styles.largeIcon}
-   tooltipPosition="top-right"
-   style={styles.large}href="/About" tooltip="About Me">
-      <NavigationArrowBack />
-    </IconButton>
-    </div>
+   <Arrows previous={'About'}/>
     
     </MuiThemeProvider>
     );

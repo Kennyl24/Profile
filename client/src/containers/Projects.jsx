@@ -11,6 +11,7 @@ import NavigationArrowDownward from 'material-ui/svg-icons/navigation/arrow-down
 import FontIcon from 'material-ui/FontIcon';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import ActionInfo from 'material-ui/svg-icons/action/info';
+import Arrows from './Arrows.jsx'
 const styles = {
   root: {
     display: 'flex',
@@ -95,22 +96,7 @@ class Projects extends React.Component {
   </span>
   </div>
   <NavMenu/>
-  <div className="arrowright"><IconButton 
-  tooltipStyles={styles.tooltip}
-   iconStyle={styles.largeIcon}
-   tooltipPosition="top-right"
-   style={styles.large}href="/About" tooltip="About" >
-      <NavigationArrowForward />
-    </IconButton></div>
-    <div className="arrowleft">
-    <IconButton 
-  tooltipStyles={styles.tooltip}
-   iconStyle={styles.largeIcon}
-   tooltipPosition="top-right"
-   style={styles.large}href="/" tooltip="Home">
-      <NavigationArrowBack />
-    </IconButton>
-  </div>
+  <Arrows next={'About'} previous={'Home'}/>
       <Description/>
   <div style={styles.root}>
     <GridList style={styles.gridList} cols={2}>

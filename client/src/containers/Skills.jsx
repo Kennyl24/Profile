@@ -45,14 +45,14 @@ class Skills extends React.Component {
   }
   hoverSkill(){
     this.setState({
-      hovered: !this.state.hovered,
-      style: styleTest,
+      // hovered: !this.state.hovered,
+      // style: styleTest,
     })
   }
   mouseLeave(){
     this.setState({
-      hovered: !this.state.hovered,
-      style: style,
+      // hovered: !this.state.hovered,
+      // style: style,
     })
   }
   render () {
