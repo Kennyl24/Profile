@@ -105,6 +105,7 @@ class Contact extends React.Component {
     });
   }
   clearInputs(){
+    console.log('clearing')
     this.setState({
         name: '', 
         email: '', 
@@ -121,7 +122,9 @@ class Contact extends React.Component {
     })
     .then( (response) =>  {
       console.log(response);
-      this.clearInputs;
+      setTimeout(() => {
+        this.clearInputs();
+      }, 500);
     })
     .catch( (error) => {
       console.log(error);
@@ -161,23 +164,25 @@ class Contact extends React.Component {
     <div className="heading">
     <span className="contact-header">Want to work together?</span>
     </div>
-    <div id="form">
     <TextField
       required = {true}
       onChange={this.nameChange}
       hintText="Name"
       underlineFocusStyle={styles.underlineStyle}
+      value={this.state.name}
     /><br />
      <TextField
       required = {true}
       onChange={this.emailChange}
       hintText="Email"
       underlineFocusStyle={styles.underlineStyle}
+      value={this.state.email}
     /><br />
      <TextField
       onChange={this.phoneChange}
       hintText="Phone (optional)"
       underlineFocusStyle={styles.underlineStyle}
+      value={this.state.phoneNumber}
     /><br />
      <TextField
       required = {true}
@@ -186,8 +191,8 @@ class Contact extends React.Component {
       hintText="Message"
       multiLine={true}
       rows={2}
+      value={this.state.message}
     />
-    </div>
     <br /> <br />
     <span>
     <RaisedButton style={{backgroundColor:'blue'}} onClick={this.submitData}>SUBMIT</RaisedButton>

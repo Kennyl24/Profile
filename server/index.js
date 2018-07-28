@@ -26,9 +26,11 @@ app.post('/ReachOut', (req, res) => {
   currentContact.save((err, currentContact) => {
     if (err) {
       console.log('err on saving', err);
-    } console.log(currentContact);
+    } 
+    console.log(currentContact); 
+    res.send('contact recieved');
   });
-  res.send('contact recieved');
+  
 });
 app.get('/Resume', (request, response) => {
   let tempFile = './files/Resume.pdf';
