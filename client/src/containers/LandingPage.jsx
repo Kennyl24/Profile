@@ -55,7 +55,7 @@ class LandingPage extends React.Component {
       <NavigationArrowForward />
     </IconButton></div>
     <div className="introduction">
-       <h2>Hi, my name is <h12>&nbsp;Kenneth LaPrelle</h12>.
+       <h2>Hi, my name is <h12>&nbsp;Kenneth LaPrelle</h12>
        </h2>
        <h3>
         Let's build something <span className="lakers">spectacular.</span>
