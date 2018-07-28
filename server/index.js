@@ -13,7 +13,7 @@ app.use('/About', express.static(__dirname + '/../client/dist'));
 app.use('/Projects', express.static(__dirname + '/../client/dist'));
 app.use('/Contact', express.static(__dirname + '/../client/dist'));
 
-app.post('/Contact', (req, res) => {
+app.post('/ReachOut', (req, res) => {
   console.log(req.body);
   let contactBody = req.body;
   let currentContact = new db.Contact({
@@ -23,16 +23,16 @@ app.post('/Contact', (req, res) => {
     message: contactBody.message,
     date: Date(),
   });
-  currentContact.save(function(err, currentContact) {
+  currentContact.save((err, currentContact) => {
     if (err) {
       console.log('err on saving', err);
     } console.log(currentContact);
   });
+  res.send('contact recieved');
 });
 app.get('/Resume', (request, response) => {
   let tempFile = './files/Resume.pdf';
   fs.readFile(tempFile, function (err, data) {
-    console.log('sending');
     response.contentType('application/pdf');
     response.send(data);
   });

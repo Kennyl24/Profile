@@ -82,6 +82,7 @@ class Contact extends React.Component {
       this.phoneChange = this.phoneChange.bind(this);
       this.messageChange = this.messageChange.bind(this);
       this.submitData = this.submitData.bind(this);
+      this.clearInputs = this.clearInputs.bind(this);
   };
   emailChange(e){
     this.setState({
@@ -102,20 +103,27 @@ class Contact extends React.Component {
     this.setState({
       message: e.target.value,
     });
-    console.log('message', e.target.value)
+  }
+  clearInputs(){
+    this.setState({
+        name: '', 
+        email: '', 
+        phoneNumber: '', 
+        message: '', 
+    })
   }
   submitData(){
-    console.log('submitting');
-    axios.post('/Contact', {
+    axios.post('/ReachOut', {
       name: this.state.name,
       email: this.state.email,
       phone: this.state.phoneNumber,
       message: this.state.message,
     })
-    .then(function (response) {
+    .then( (response) =>  {
       console.log(response);
+      this.clearInputs;
     })
-    .catch(function (error) {
+    .catch( (error) => {
       console.log(error);
     });
   }
@@ -153,6 +161,7 @@ class Contact extends React.Component {
     <div className="heading">
     <span className="contact-header">Want to work together?</span>
     </div>
+    <div id="form">
     <TextField
       required = {true}
       onChange={this.nameChange}
@@ -177,7 +186,9 @@ class Contact extends React.Component {
       hintText="Message"
       multiLine={true}
       rows={2}
-    /><br /> <br />
+    />
+    </div>
+    <br /> <br />
     <span>
     <RaisedButton style={{backgroundColor:'blue'}} onClick={this.submitData}>SUBMIT</RaisedButton>
     </span>
