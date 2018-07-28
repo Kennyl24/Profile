@@ -82,6 +82,7 @@ class Contact extends React.Component {
       this.phoneChange = this.phoneChange.bind(this);
       this.messageChange = this.messageChange.bind(this);
       this.submitData = this.submitData.bind(this);
+      this.checkData = this.checkData.bind(this);
       this.clearInputs = this.clearInputs.bind(this);
   };
   emailChange(e){
@@ -114,12 +115,18 @@ class Contact extends React.Component {
     })
   }
   submitData(){
-    axios.post('/ReachOut', {
+    axios.post('/Email', {
       name: this.state.name,
       email: this.state.email,
       phone: this.state.phoneNumber,
       message: this.state.message,
     })
+    // axios.post('/ReachOut', {
+    //   name: this.state.name,
+    //   email: this.state.email,
+    //   phone: this.state.phoneNumber,
+    //   message: this.state.message,
+    // })
     .then( (response) =>  {
       console.log(response);
       setTimeout(() => {
@@ -129,6 +136,21 @@ class Contact extends React.Component {
     .catch( (error) => {
       console.log(error);
     });
+  }
+  checkData(){
+    // if submit data good do this,
+    if(this.state.message.length < 10){
+      window.alert('message too short, please expand')
+    } /\S+@\S+\.\S+/.test(this.state.email) ? window.alert('not a vaild email') : window.alert('working or not idk');
+
+      if(this.state.email.length < 2){
+      window.alert('email too short');
+    }
+      if(this.state.name.length < 1){
+      window.alert('Sorry the name is too short');
+    }
+    // else do this 
+    this.submitData();
   }
   render(){
     return (
@@ -195,7 +217,7 @@ class Contact extends React.Component {
     />
     <br /> <br />
     <span>
-    <RaisedButton style={{backgroundColor:'blue'}} onClick={this.submitData}>SUBMIT</RaisedButton>
+    <RaisedButton style={{backgroundColor:'blue'}} onClick={this.checkData}>SUBMIT</RaisedButton>
     </span>
     </Paper>
     </span>

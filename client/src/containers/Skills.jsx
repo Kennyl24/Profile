@@ -13,7 +13,8 @@ const style = {
   margin: 4,
   textAlign: 'center',
   display: 'inline-block',
-  backgroundColor: 'rgb(36, 96, 160)'
+  backgroundColor: 'black',
+  color:'white'
 };
 const styleTest = {
   height: 225,

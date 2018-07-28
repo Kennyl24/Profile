@@ -5,6 +5,8 @@ const database = require('../database');
 const db = require('../database/index.js');
 const mongoose = require('mongoose');
 const fs = require('fs');
+const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
 app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/../client/dist'));
@@ -12,6 +14,35 @@ app.use('/Home', express.static(__dirname + '/../client/dist'));
 app.use('/About', express.static(__dirname + '/../client/dist'));
 app.use('/Projects', express.static(__dirname + '/../client/dist'));
 app.use('/Contact', express.static(__dirname + '/../client/dist'));
+app.use('/ReachOut', express.static(__dirname + '/../client/dist'));
+app.use('/Email', express.static(__dirname + '/../client/dist'));
+
+app.post('/Email', (req, res) => {
+  const mailOptions = {
+    from: 'kenny.laprelle@gmail.com',
+    to: 'kenny.laprelle@gmail.com',
+    subject: 'Contact from Portfolio',
+    text: '' + 'Name:' + req.body.name + ' ' + 'Email:' + req.body.email + ' ' + 'Message:' + req.body.message + ' ' + 'Phone:' + req.body.phone + ' '
+    + 'Date:' + Date() + '',
+  };
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    auth: {
+      user: 'kenny.laprelle@gmail.com',
+      pass: 'jlq0292424'
+    }
+  });
+  transporter.sendMail(mailOptions, (error, info) => {
+    console.log('sending mail');
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+});
+
 
 app.post('/ReachOut', (req, res) => {
   console.log(req.body);
@@ -30,7 +61,6 @@ app.post('/ReachOut', (req, res) => {
     console.log(currentContact); 
     res.send('contact recieved');
   });
-  
 });
 app.get('/Resume', (request, response) => {
   let tempFile = './files/Resume.pdf';

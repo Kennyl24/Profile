@@ -60,7 +60,7 @@ const skillsData = [
     title: 'Cassandra',
   },
   {
-    image: 'https://png.icons8.com/metro/1600/github.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png',
     title: 'Git',
   },
 ];
