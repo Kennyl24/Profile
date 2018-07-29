@@ -137,6 +137,11 @@ p2{
   margin-right: 20%;
   margin-left: 20%;
   padding-bottom: 4%;
+  /* margin: auto; 
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -35%; */
   width: 70%;
 }
 .projects_page {
@@ -329,9 +334,9 @@ h1 {
   z-index: 99;
 }
 @keyframes bounce {
-	0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
-    40%  { -webkit-transform: translateY(-20px); }
-	80% { -webkit-transform: translateY(-10px); }
+	0%, 20%, 60%, 100%  { -webkit-transform: translateX(-20px); }
+    40%  { -webkit-transform: translateX(0px); }
+	80% { -webkit-transform: translateX(0px); }
 }
 .tester {
   text-align: center;

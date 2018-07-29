@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Skills from './Skills.jsx'
+import SkillsTest from './SkillsTest.jsx'
 
 const skillsData = [
   {

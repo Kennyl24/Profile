@@ -20,6 +20,7 @@ import IconButton from 'material-ui/IconButton';
 import NavMenu from './NavMenu.jsx';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import SkillsList from './SkillsList.jsx'
+import SkillsTest from './SkillsTest.jsx'
 import Arrows from './Arrows.jsx'
 class AboutPage extends React.Component {
   constructor(props) {
