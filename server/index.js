@@ -41,12 +41,12 @@ app.post('/Email', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
-  res.send(200);
+  res.sendStatus(200);
 });
 
 
 app.post('/ReachOut', (req, res) => {
-  console.log(req.body);
+  console.log('hi', req.body);
   let contactBody = req.body;
   let currentContact = new db.Contact({
     name: contactBody.name,
@@ -59,8 +59,8 @@ app.post('/ReachOut', (req, res) => {
     if (err) {
       console.log('err on saving', err);
     } 
-    console.log(currentContact); 
-    res.send('contact recieved');
+    console.log('hey', currentContact); 
+    res.sendStatus(200);
   });
 });
 app.get('/Resume', (request, response) => {

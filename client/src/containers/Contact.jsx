@@ -21,8 +21,8 @@ import CommunicationContactPhone from 'material-ui/svg-icons/communication/conta
 import Arrows from './Arrows.jsx';
 
 const style = {
-  height: 500,
-  minWidth: 500,
+  height: 520,
+  minWidth: '30%',
   // margin: 20,
   textAlign: 'center',
   display: 'inline-block',
@@ -76,6 +76,7 @@ class Contact extends React.Component {
         email: '', 
         phoneNumber: '', 
         message: '', 
+        nameError: false,
       }
       this.nameChange = this.nameChange.bind(this);
       this.emailChange = this.emailChange.bind(this);
@@ -106,53 +107,72 @@ class Contact extends React.Component {
     });
   }
   clearInputs(){
-    console.log('clearing');
     this.setState({
         name: '', 
         email: '', 
         phoneNumber: '', 
         message: '', 
+        nameError: false,
+        messageError:false,
+        emailError: false,
     })
   }
+  storeData(){
+    axios.post('/ReachOut', {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phoneNumber,
+      message: this.state.message,
+    })
+    .then( (response) =>  {
+      window.alert('Thank you for submitting, Ill be in touch shortly')
+    })
+    .catch( (error) => {
+      return ('There seems to have been an error');
+    });
+  }
   submitData(){
-    console.log('dp');
     axios.post('/Email', {
       name: this.state.name,
       email: this.state.email,
       phone: this.state.phoneNumber,
       message: this.state.message,
     })
-    // axios.post('/ReachOut', {
-    //   name: this.state.name,
-    //   email: this.state.email,
-    //   phone: this.state.phoneNumber,
-    //   message: this.state.message,
-    // })
     .then( (response) =>  {
       setTimeout(() => {
         this.clearInputs();
       }, 500);
     })
+    .then(() => {
+      this.storeData();
+    })
     .catch( (error) => {
-      console.log(error);
+      return ('There seems to have been an error');
     });
   }
   checkData(){
-    // if submit data good do this,
     if(this.state.name.length < 1){
       window.alert('Name is not filled out');
+      this.setState({
+        nameError: true,
+      })
       return;
     }
     if(this.state.message.length < 6){
       window.alert('Message is too short');
+      this.setState({
+        messageError: true,
+      })
       return;
     }
 
       if(this.state.email.length < 2){
       window.alert('Email too short');
+      this.setState({
+        emailError: true,
+      })
       return;
     }
-    // else do this 
     /\S+@\S+\.\S+/.test(this.state.email) ? this.submitData() : window.alert('Email is invalid');
   }
   render(){
@@ -162,15 +182,66 @@ class Contact extends React.Component {
     <div className="contact_page">
     <span className="contact_form">
     <Paper style={style} zDepth={4} rounded={true}>
-    <div className="heading">
-    <span className="contact-header">Connect with me</span>
+    <div className="contact-header">
+    <span className='contact-header-text'> Let's stay in touch</span>
+      </div>
+    <TextField
+      required = {true}
+      onChange={this.nameChange}
+      hintText="Name"
+      underlineFocusStyle={styles.underlineStyle}
+      value={this.state.name}
+      style={{width:'90%'}}
+      type='text'
+      errorText={this.state.nameError ? 'Name must be at least 3 characters' : ''}
+      floatingLabelText="Name"
+      floatingLabelStyle={{color:'#999999'}}
+      errorStyle={{display:'table'}}
+    /><br />
+     <TextField
+      required = {true}
+      onChange={this.emailChange}
+      hintText="Email"
+      underlineFocusStyle={styles.underlineStyle}
+      value={this.state.email}
+      style={{width:'90%'}}
+      type='email'
+      floatingLabelText="Email"
+      errorText={this.state.emailError ? 'Cannot validate the email provided' : ''}
+      floatingLabelStyle={{color:'#999999'}}
+    /><br />
+     <TextField
+      onChange={this.phoneChange}
+      hintText="Phone (optional)"
+      underlineFocusStyle={styles.underlineStyle}
+      value={this.state.phoneNumber}
+      style={{width:'90%'}}
+      type='tel'
+      floatingLabelText="Phone"
+      floatingLabelStyle={{color:'#999999'}}
+    /><br />
+     <TextField
+      required = {true}
+      onChange={this.messageChange}
+      underlineFocusStyle={styles.underlineStyle}
+      hintText="Message"
+      multiLine={true}
+      rows={2}
+      value={this.state.message}
+      style={{width:'90%'}}
+      errorText={this.state.messageError ? 'Message too short' : ''}
+      type='text'
+    />
+    <br /> <br />
+    <div>
+    <RaisedButton style={{backgroundColor:'blue', marginBottom:'6%'}} onClick={this.checkData}>SUBMIT</RaisedButton>
     </div>
     <FlatButton
       href="https://www.linkedin.com/in/kenneth-laprelle/"
       target="_blank"
       secondary={true}
       backgroundColor="white"
-      icon={<img style={{height: '30px', width: '30px'}}src="http://sguru.org/wp-content/uploads/2018/02/linkedin-logo.png"></img>}
+      icon={<img style={{height: '30px', width: '30px'}}src="https://image.flaticon.com/icons/svg/34/34227.svg"></img>}
     />
     <FlatButton
       href="https://github.com/kennyl24"
@@ -186,42 +257,6 @@ class Contact extends React.Component {
       backgroundColor="white"
       icon={<img style={{height: '45px', width: '45px'}}src="http://www.stickpng.com/assets/images/584856b4e0bb315b0f7675ac.png"></img>}
     />
-    <div className="heading">
-    <span className="contact-header">Want to work together?</span>
-    </div>
-    <TextField
-      required = {true}
-      onChange={this.nameChange}
-      hintText="Name"
-      underlineFocusStyle={styles.underlineStyle}
-      value={this.state.name}
-    /><br />
-     <TextField
-      required = {true}
-      onChange={this.emailChange}
-      hintText="Email"
-      underlineFocusStyle={styles.underlineStyle}
-      value={this.state.email}
-    /><br />
-     <TextField
-      onChange={this.phoneChange}
-      hintText="Phone (optional)"
-      underlineFocusStyle={styles.underlineStyle}
-      value={this.state.phoneNumber}
-    /><br />
-     <TextField
-      required = {true}
-      onChange={this.messageChange}
-      underlineFocusStyle={styles.underlineStyle}
-      hintText="Message"
-      multiLine={true}
-      rows={2}
-      value={this.state.message}
-    />
-    <br /> <br />
-    <span>
-    <RaisedButton style={{backgroundColor:'blue'}} onClick={this.checkData}>SUBMIT</RaisedButton>
-    </span>
     </Paper>
     </span>
     </div>

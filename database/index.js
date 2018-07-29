@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-mongoose.connect('process.env.MONGODB_URI');
+mongoose.connect(process.env.MONGODB_URI ? 'process.env.MONGODB_URI' : 'mongodb://localhost/contact' );
 const db = mongoose.connection;
 
 db.on('error', function(err) {

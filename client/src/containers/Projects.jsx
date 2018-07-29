@@ -11,12 +11,15 @@ import NavigationArrowDownward from 'material-ui/svg-icons/navigation/arrow-down
 import FontIcon from 'material-ui/FontIcon';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import ActionInfo from 'material-ui/svg-icons/action/info';
-import Arrows from './Arrows.jsx'
+import Arrows from './Arrows.jsx';
+import TileModal from './TileModal.jsx';
+
 const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    margin: 'auto',
   },
   gridList: {
     display: 'flex',
@@ -30,24 +33,6 @@ const styles = {
   titleStyle: {
     color: 'white',
     fontSize: '28px'
-  },
-  largeIcon: {
-    width: 60,
-    height: 60,
-    color: 'white'
-  },
-  tooltip: {
-    width: 120,
-    fontSize: '22px',
-    backgroundColor: 'white',
-    fontColor: 'black',
-    color: 'rgb(244, 67, 54)',
-    rippleBackgroundColor: 'blue'
-  },
-  large: {
-    width: 120,
-    height: 120,
-    padding: 30,
   },
 };
 
@@ -79,11 +64,11 @@ class Projects extends React.Component {
       this.openModal = this.openModal.bind(this);
   }
 
-  openModal(e){
-    e.preventDefault();
-    console.log('clicking cuh', e.target.key)
+  openModal(tile){
+    console.log('clicking cuh', tile)
     this.setState({
       modalOpen: true,
+      currentTitle: tile.title,
     })
   }
   render () {
@@ -97,21 +82,23 @@ class Projects extends React.Component {
   </div>
   <NavMenu/>
   <Arrows next={'About'} previous={'Home'}/>
-      <Description/>
+    <Description/>
+  { this.state.modalOpen ? <TileModal title={this.state.currentTitle}/> : null }
   <div style={styles.root}>
     <GridList style={styles.gridList} cols={2}>
       {tilesData.map((tile) => (
         <GridTile
+          style={{border:'thick double rgb(99, 99, 90)', height: '120%'}}
           key={tile.img}
           title={tile.title}
-          actionIcon={<div onClick={this.openModal}><IconButton ><ActionInfo/></IconButton></div>}
+          actionIcon={<div onClick={this.openModal.bind(this, tile)}><IconButton ><ActionInfo/></IconButton></div>}
           titleStyle={styles.titleStyle}
           titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
           <img src={tile.img} />
         </GridTile>
       ))}
-    </GridList>
+  </GridList>
   </div>
   </div>
   </MuiThemeProvider>
