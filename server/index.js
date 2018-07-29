@@ -41,6 +41,7 @@ app.post('/Email', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
+  res.send(200);
 });
 
 

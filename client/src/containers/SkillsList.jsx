@@ -33,14 +33,14 @@ const skillsData = [
   },
   {
     image: 'https://www.drupal.org/files/project-images/rain-drop-hi.png',
-    title: 'RESTFUL API',
+    title: 'RESTFUL',
   },
   {
     image: 'https://cdn.gomix.com/project-avatar/0d184ee3-fd8d-4b94-acf4-b4e686e57375.png',
     title: 'PassportJS',
   },
   {
-    image: 'http://cdn.onlinewebfonts.com/svg/img_253306.png',
+    image: 'https://svn.apache.org/repos/asf/kafka/site/logos/originals/png/ICON%20-%20White%20on%20Transparent.png',
     title: 'Kafka',
   },
   {

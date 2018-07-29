@@ -106,7 +106,7 @@ class Contact extends React.Component {
     });
   }
   clearInputs(){
-    console.log('clearing')
+    console.log('clearing');
     this.setState({
         name: '', 
         email: '', 
@@ -115,6 +115,7 @@ class Contact extends React.Component {
     })
   }
   submitData(){
+    console.log('dp');
     axios.post('/Email', {
       name: this.state.name,
       email: this.state.email,
@@ -128,7 +129,6 @@ class Contact extends React.Component {
     //   message: this.state.message,
     // })
     .then( (response) =>  {
-      console.log(response);
       setTimeout(() => {
         this.clearInputs();
       }, 500);
@@ -141,7 +141,7 @@ class Contact extends React.Component {
     // if submit data good do this,
     if(this.state.message.length < 10){
       window.alert('message too short, please expand')
-    } /\S+@\S+\.\S+/.test(this.state.email) ? window.alert('not a vaild email') : window.alert('working or not idk');
+    }
 
       if(this.state.email.length < 2){
       window.alert('email too short');
@@ -150,7 +150,7 @@ class Contact extends React.Component {
       window.alert('Sorry the name is too short');
     }
     // else do this 
-    this.submitData();
+    /\S+@\S+\.\S+/.test(this.state.email) ? this.submitData() : window.alert('working or not idk');
   }
   render(){
     return (
