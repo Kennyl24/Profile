@@ -139,18 +139,21 @@ class Contact extends React.Component {
   }
   checkData(){
     // if submit data good do this,
-    if(this.state.message.length < 10){
-      window.alert('message too short, please expand')
+    if(this.state.name.length < 1){
+      window.alert('Name is not filled out');
+      return;
+    }
+    if(this.state.message.length < 6){
+      window.alert('Message is too short');
+      return;
     }
 
       if(this.state.email.length < 2){
-      window.alert('email too short');
-    }
-      if(this.state.name.length < 1){
-      window.alert('Sorry the name is too short');
+      window.alert('Email too short');
+      return;
     }
     // else do this 
-    /\S+@\S+\.\S+/.test(this.state.email) ? this.submitData() : window.alert('working or not idk');
+    /\S+@\S+\.\S+/.test(this.state.email) ? this.submitData() : window.alert('Email is invalid');
   }
   render(){
     return (
