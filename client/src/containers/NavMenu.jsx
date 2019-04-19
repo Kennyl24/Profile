@@ -19,6 +19,7 @@ const styles = {
   large: {
     height: 48,
     width: 48,
+    fill: '#38beb0'
   },
 };
 class NavMenu extends React.Component {

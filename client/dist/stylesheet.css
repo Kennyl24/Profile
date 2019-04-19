@@ -18,7 +18,7 @@ h2{
 h12{
   text-align: center;
   font-size: 53px;
-  color: rgb(207, 209, 137);
+  color: #38beb0;
   font-family: Raleway; 
 }
 
@@ -33,6 +33,7 @@ h3{
 .lakers {
   text-align: center;
   font-size: 33px;
+  color: #38beb0;
   /* border-bottom: 1px solid;
   border-bottom-color: rgb(244, 67, 54);  */
 }
@@ -353,5 +354,5 @@ h1 {
   border-bottom-color: rgb(125, 121, 121)
 }
 .menu-item :hover {
-  background-color: rgb(82, 81, 81);
+  background-color: #38beb0;
 }

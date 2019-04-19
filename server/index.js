@@ -7,6 +7,10 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
+let forceSsl = require('force-ssl-heroku');
+
+app.use(forceSsl);
+
 app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/../client/dist'));

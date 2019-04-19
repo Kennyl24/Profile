@@ -14,7 +14,7 @@ const styles = {
     fontSize: '22px',
     backgroundColor: 'white',
     fontColor: 'black',
-    color: 'rgb(244, 67, 54)',
+    color: '#38beb0',
     rippleBackgroundColor: 'blue'
   },
   large: {
